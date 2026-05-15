@@ -3,6 +3,10 @@
 Middleware for `tso3270.com` that fronts a Hyper-V TurnKey MVS guest with
 a web-auth banner page and on-demand `proxy3270` lifecycle management.
 
+
+
+https://github.com/jimpames/mvs-cerberus/blob/d2270ab0f01c8d4a75b969da8d1bd9614fd08783/mvs-cerberus.JPG
+
 ## Architecture
 
 ```
