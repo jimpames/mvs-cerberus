@@ -3,6 +3,10 @@ for System/390
 
 - secure any 3270 system - TSO, VM/370, AS/400, SYSTEM/36
 
+only v1 source is in the repo
+
+wait a few weeks I will post v2 source
+18 may 26 today
 
 released as ZIP for Hercules/Hyperion
 
