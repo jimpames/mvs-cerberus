@@ -1,4 +1,20 @@
-# MVS Cerberus Gate
+# MVS Cerberus Gate 3270 ephemeral RADIUS firewall and session turret 
+for System/390 
+
+- secure any 3270 system - TSO, VM/370, AS/400, SYSTEM/36
+
+
+released as ZIP for Hercules/Hyperion
+
+commercial DASD licenses available for real iron shops
+
+runs as a pre built VM on System/390
+- ships as DASD tape for instant install and run as VM on S/390
+
+brings fresh life to UBUNTU 18.04 on S/390 
+- w Go, Python, Ngrok tunnel support and MVS CERBERUS FIREWALL, binary included
+  
+jimpames@gmail.com for license
 
 
 demo video:
