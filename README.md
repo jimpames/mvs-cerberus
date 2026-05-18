@@ -9,6 +9,9 @@
 
 ---
 
+<img width="1297" height="1013" alt="access-granted" src="https://github.com/user-attachments/assets/3a568c87-b368-4ae9-8007-52ed68c329a3" />
+
+
 ## What it does
 
 Cerberus is an authenticated edge gateway for **3270 terminal access** to mainframe systems &mdash; TSO, VM/370, AS/400, SYSTEM/36, anything that speaks the 3270 datastream. It sits between users and your mainframes. It opens an ephemeral TN3270 path **only after** a user successfully authenticates. It closes that path the moment the session lease expires. It produces a complete audit record of every connection it ever brokered.
