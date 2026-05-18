@@ -4,6 +4,8 @@
 Source code: request DASD image via my email 
 - this is based on zlinux , modified w python, go and ngrok support
 
+Hercules / Hyperion: If you need this build, msg me and I will zip it for you with the config....
+
 ### 3270 RADIUS Turret Firewall &mdash; ephemeral access, audited sessions, zero firewall configuration
 
 > *Most network security products try to keep attackers out.*
