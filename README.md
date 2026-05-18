@@ -11,6 +11,32 @@ will I release the source?: - only as a DASD image - once you boot it, you have 
 
 you got zlinux ubuntu 18.04 running on zarch 390x? yes - had to build req. hyperion, cfg it and now both host and VM are ubuntu 18.04 
 
+thank you to the community for your brilliant work making this possible
+
+https://github.com/racingmars/proxy3270
+
+https://go.dev/
+
+https://www.python.org/
+
+https://github.com/pyradius/pyrad
+
+https://www.jaymoseley.com/hercules/
+
+https://sdl-hercules-390.github.io/html/
+
+https://www.cbttape.org/vm6.htm
+
+https://www.vm370.org/
+
+https://github.com/moshix/zlinux
+
+https://ngrok.com/
+
+https://www.ibm.com/us-en
+
+https://releases.ubuntu.com/18.04/
+
 ### 3270 RADIUS Turret Firewall &mdash; ephemeral access, audited sessions, zero firewall configuration
 
 > *Most network security products try to keep attackers out.*
