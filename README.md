@@ -15,6 +15,9 @@ brings fresh life to UBUNTU 18.04 on S/390
 - w Go, Python, Ngrok tunnel support and MVS CERBERUS FIREWALL, binary included
   
 jimpames@gmail.com for license
+- required for DASD access to linux image
+- otherwise, burn a few trillion instr in HERC
+- and go your own...w zip here in git
 
 
 demo video:
