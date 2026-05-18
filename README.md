@@ -6,6 +6,11 @@ Source code: request DASD image via my email
 
 Hercules / Hyperion: If you need this build, msg me and I will zip it for you with the config....
 
+Q/A:
+will I release the source?: - only as a DASD image - once you boot it, you have source.
+
+you got zlinux ubuntu 18.04 running on zarch 390x? yes - had to build req. hyperion, cfg it and now both host and VM are ubuntu 18.04 
+
 ### 3270 RADIUS Turret Firewall &mdash; ephemeral access, audited sessions, zero firewall configuration
 
 > *Most network security products try to keep attackers out.*
