@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# Script to create the preseed file and update the initrd in the Ubuntu
+# install CD file tree.
+
+logextension=`date "+%F-%T"`
+logit () {
+    logdate=`date "+%F-%T"`
+    echo "$logdate:$1" >> ./logs/config_preseed.log.$logextension
+}
+
+set_colors() {
+    red=`tput setaf 1`
+    green=`tput setaf 2`
+    yellow=`tput setaf 3`
+    blue=`tput setaf 4`
+    magenta=`tput setaf 5`
+    cyan=`tput setaf 6`
+    white=`tput setaf 7`
+    blink=`tput blink`
+    rev=`tput rev`
+    reset=`tput sgr0`
+}
+
+set_pass() {
+    echo; echo
+    echo "${cyan}You will now be asked for a password for zLinux user zubuntu."
+    echo "This is the password you will log in with after installation is complete.${reset}"
+    echo
+    until encryptedPass=`openssl passwd -6`
+    do
+        echo "${red}Passwords didn't match! Retry...${reset}"
+        sleep 1
+    done
+    echo "${yellow}Encrypted password has been generated ${reset}"
+
+    sed -i "s#__CRYPT_PASSWORD__#$encryptedPass#" preseed.cfg
+}
+
+rebuild_initrd() {
+    chmod +w install/boot
+    cd install/boot
+
+    # Backup original initrd if not already done
+    if [[ ! -f initrd.ubuntu.orig ]]; then
+        cp initrd.ubuntu initrd.ubuntu.orig
+    fi
+
+    cp initrd.ubuntu.orig initrd.gz
+    gunzip initrd.gz
+    chmod +w initrd
+
+    # Copy preseed and modern post-install script into initrd
+    mv ../../preseed.cfg ./preseed.cfg
+    cp ../../../templates/post_install_modern.sh ./post_install_modern.sh
+    chmod +x ./post_install_modern.sh
+
+    echo "preseed.cfg" | cpio -o -H newc -A -F initrd
+    echo "post_install_modern.sh" | cpio -o -H newc -A -F initrd
+
+    gzip initrd
+    chmod +w initrd.ubuntu
+    mv initrd.gz initrd.ubuntu
+    chmod +w initrd.siz
+    printf "0: %08x" $(du -b initrd.ubuntu | awk '{print $1}') | xxd -r > initrd.siz
+
+    cd ../..
+}
+
+update_preseed_late_command() {
+    echo "→ Adding late_command to run modern bootstrap after install..."
+    cat >> preseed.cfg << 'EOF'
+
+# Late command: run modernization script
+d-i preseed/late_command string \
+    cp /cdrom/post_install_modern.sh /target/root/; \
+    in-target chmod +x /root/post_install_modern.sh; \
+    in-target /root/post_install_modern.sh > /target/var/log/modern_bootstrap.log 2>&1; \
+    in-target chown -R zubuntu:zubuntu /root/post_install_modern.sh /var/log/modern_bootstrap.log || true
+EOF
+}
+
+# ====================== MAIN ======================
+set_colors
+
+# Prepare the preseed template
+cp templates/preseed.template preseed.cfg
+set_pass
+
+rebuild_initrd
+update_preseed_late_command
+
+echo "${green}Preseed + modern bootstrap configured successfully.${reset}"
+logit "Preseed updated with modern post-install script"
