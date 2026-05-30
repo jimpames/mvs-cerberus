@@ -113,11 +113,15 @@ https://releases.ubuntu.com/18.04/
 
 ## What it does
 
-Cerberus is an authenticated edge gateway for **3270 terminal access** to mainframe systems &mdash; TSO, VM/370, AS/400, SYSTEM/36, anything that speaks the 3270 datastream. It sits between users and your mainframes. It opens an ephemeral TN3270 path **only after** a user successfully authenticates. It closes that path the moment the session lease expires. It produces a complete audit record of every connection it ever brokered.
+Cerberus is an authenticated edge gateway for **3270 terminal access** to mainframe systems &mdash; TSO, VM/370, AS/400, SYSTEM/36, anything that speaks the 3270 datastream.
+ It sits between users and your mainframes. It opens an ephemeral TN3270 path **only after** a user successfully authenticates. It closes that path the moment the session lease expires.
+It produces a complete audit record of every connection it ever brokered.
 
-There is no permanent TN3270 port listening on the public internet. There is no port-forward to configure. There is no firewall rule to write. **The endpoint does not exist** until Cerberus summons it for an authorized user, and it ceases to exist when their lease ends.
+There is no permanent TN3270 port listening on the public internet. There is no port-forward to configure. There is no firewall rule to write.
+ **The endpoint does not exist** until Cerberus summons it for an authorized user, and it ceases to exist when their lease ends.
 
-A port scan against your reserved endpoint finds nothing. Reconnaissance finds nothing. The mainframe behind Cerberus is invisible to the network until auth grants visibility, for the duration of a lease, audited end to end.
+A port scan against your reserved endpoint finds nothing. Reconnaissance finds nothing. The mainframe behind Cerberus is invisible to the network until auth grants visibility,
+for the duration of a lease, audited end to end.
 
 This is **just-in-time access** taken to its logical conclusion.
 
@@ -162,15 +166,19 @@ This is **just-in-time access** taken to its logical conclusion.
 
 ## Distribution
 
-**For Hercules / Hyperion**: free, open source, this repository. Drop the kit on any zLinux (or any Linux) host, run `./install.sh`, configure secrets, point it at your backends, run. Suitable for hobby mainframes, labs, training environments, and as a reference implementation.
+**For Hercules / Hyperion**: free, open source, this repository. Drop the kit on any zLinux (or any Linux) host, run `./install.sh`, configure secrets, point it at your backends, run.
+Suitable for hobby mainframes, labs, training environments, and as a reference implementation.
 
-**For real iron**: a commercial license includes a pre-built **DASD volume** containing a hardened zLinux 18.04 for System/390 with Cerberus, ngrok, Python, and Go pre-installed and pre-configured. Attach the DASD to your IFL engine. IPL it. Configure your identity source. You have a working 3270 access control plane &mdash; in your own LPAR, on hardware you already own, with zero new operational discipline to learn. Update process is "swap the DASD volume." [Contact for licensing](#commercial-licensing).
+**For real iron**: a commercial license includes a pre-built **DASD volume** containing a hardened zLinux 18.04 for System/390 with Cerberus, ngrok, Python, and Go pre-installed and pre-configured.
+Attach the DASD to your IFL engine. IPL it. Configure your identity source. You have a working 3270 access control plane &mdash; in your own LPAR, on hardware you already own,
+ with zero new operational discipline to learn. Update process is "swap the DASD volume." [Contact for licensing](#commercial-licensing).
 
 ---
 
 ## Use cases
 
-- **Banks**, **insurers**, **airlines**, **government**: gate operator and sysprog 3270 access with corporate identity (AD/Okta/Ping) and SIEM-grade audit logging, without changing how mainframe applications authenticate users
+- **Banks**, **insurers**, **airlines**, **government**: gate operator and sysprog 3270 access with corporate identity (AD/Okta/Ping) and SIEM-grade audit logging,
+without changing how mainframe applications authenticate users
 - **MSPs**: provide multi-tenant 3270 access to multiple customer mainframes through one gateway with per-customer audit and lease policies
 - **Compliance teams**: produce technical evidence aligned to PCI-DSS, SOX, FFIEC, GDPR, FedRAMP, and NIST 800-53 access-control families
 - **Hobbyist operators**: stop exposing your TK4-/TK5/VM/370 to the open internet, gate it behind real auth, keep a real audit trail
@@ -246,13 +254,17 @@ If you cloned v1 in the last 12 hours, thanks for showing up early. Watch this s
 
 Existing tools for 3270 access control fall into three groups:
 
-- **Mainframe-side identity products** (RACF/ACF2/Top Secret, PassTicket, IBM MFA): excellent at *what happens once you're on the mainframe*, weaker at *network-layer access in the first place*.
-- **Generic ZTNA brokers** (Boundary, Teleport, Tailscale): designed for SSH and HTTPS, with little awareness of 3270 / TN3270 / EBCDIC / SNA semantics, and they require the backend to be *continuously reachable* through them.
+- **Mainframe-side identity products** (RACF/ACF2/Top Secret, PassTicket, IBM MFA): excellent at *what happens once you're on the mainframe*,
+- weaker at *network-layer access in the first place*.
+- **Generic ZTNA brokers** (Boundary, Teleport, Tailscale): designed for SSH and HTTPS, with little awareness of 3270 / TN3270 / EBCDIC / SNA semantics,
+-  and they require the backend to be *continuously reachable* through them.
 - **Bastion-host + jump-server patterns**: operational toil, partial audit coverage, no native concept of "the door doesn't exist when nobody's authorized."
 
-Cerberus fills the gap between them. Mainframe-native distribution (DASD volume on zLinux). Network-edge enforcement (ephemeral tunnel, not continuous exposure). Identity-source-agnostic (your AD/Okta/SAML *and* your RACF). Full audit trail. Drops into the operational model real mainframe shops already use.
+Cerberus fills the gap between them. Mainframe-native distribution (DASD volume on zLinux). Network-edge enforcement (ephemeral tunnel, not continuous exposure). 
+Identity-source-agnostic (your AD/Okta/SAML *and* your RACF). Full audit trail. Drops into the operational model real mainframe shops already use.
 
-The architecture isn't theoretical. Cerberus runs every day on a hobby z-Architecture stack: Win 11 → VMware Workstation Pro → zLinux for s390x → Hercules/Hyperion → MVS 3.8j TK5 and VM/370 Community Edition as parallel backends, with Cerberus gating both. The demo video shows it end to end.
+The architecture isn't theoretical. Cerberus runs every day on a hobby z-Architecture stack: Win 11 → VMware Workstation Pro → zLinux for s390x → Hercules/Hyperion → 
+MVS 3.8j TK5 and VM/370 Community Edition as parallel backends, with Cerberus gating both. The demo video shows it end to end.
 
 ---
 
