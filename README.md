@@ -7,6 +7,10 @@ advert:
 
 https://youtu.be/_m4ntY-gONc?si=v1HK_Qvi8YE99HYs
 
+you probably want my SNA-CLAW-3270 too...
+
+https://github.com/jimpames/SNA-CLAW-3270
+
 
 Source code: 
 
