@@ -113,14 +113,19 @@ https://releases.ubuntu.com/18.04/
 
 ## What it does
 
-Cerberus is an authenticated edge gateway for **3270 terminal access** to mainframe systems &mdash; TSO, VM/370, AS/400, SYSTEM/36, anything that speaks the 3270 datastream.
- It sits between users and your mainframes. It opens an ephemeral TN3270 path **only after** a user successfully authenticates. It closes that path the moment the session lease expires.
+Cerberus is an authenticated edge gateway for **3270 terminal access** to mainframe systems &mdash;
+ TSO, VM/370, AS/400, SYSTEM/36, anything that speaks the 3270 datastream.
+ It sits between users and your mainframes. It opens an ephemeral TN3270 path **only after** a user
+ successfully authenticates. It closes that path the moment the session lease expires.
 It produces a complete audit record of every connection it ever brokered.
 
-There is no permanent TN3270 port listening on the public internet. There is no port-forward to configure. There is no firewall rule to write.
- **The endpoint does not exist** until Cerberus summons it for an authorized user, and it ceases to exist when their lease ends.
+There is no permanent TN3270 port listening on the public internet. There is no port-forward to configure.
+ There is no firewall rule to write.
+ **The endpoint does not exist** until Cerberus summons it for an authorized user, and it ceases to
+ exist when their lease ends.
 
-A port scan against your reserved endpoint finds nothing. Reconnaissance finds nothing. The mainframe behind Cerberus is invisible to the network until auth grants visibility,
+A port scan against your reserved endpoint finds nothing. Reconnaissance finds nothing. The mainframe
+behind Cerberus is invisible to the network until auth grants visibility,
 for the duration of a lease, audited end to end.
 
 This is **just-in-time access** taken to its logical conclusion.
