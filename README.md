@@ -108,8 +108,6 @@ https://releases.ubuntu.com/18.04/
 
 ---
 
-<img width="1297" height="1013" alt="access-granted" src="https://github.com/user-attachments/assets/3a568c87-b368-4ae9-8007-52ed68c329a3" />
-
 
 ## What it does
 
