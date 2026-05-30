@@ -3,6 +3,10 @@
 
 <img width="1106" height="569" alt="image" src="https://github.com/user-attachments/assets/060c1f99-74e8-4f49-a119-848be088a4ff" />
 
+advert:
+
+https://youtu.be/_m4ntY-gONc?si=v1HK_Qvi8YE99HYs
+
 
 Source code: 
 
