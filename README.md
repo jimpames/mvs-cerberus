@@ -4,7 +4,14 @@
 <img width="1106" height="569" alt="image" src="https://github.com/user-attachments/assets/060c1f99-74e8-4f49-a119-848be088a4ff" />
 
 
-Source code: request DASD image via my email 
+Source code: 
+
+as of today 29 may 2026
+
+the gzip of the installable system for MVS CERBERUS 
+is in the github here
+
+OR - request DASD image via my email 
 
 - this is based on moshiz zlinux , modified w python, go and ngrok support
 - you can now use my files above to improve moshix zlinux installer for 390x to
