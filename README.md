@@ -19,6 +19,32 @@ OR - request DASD image via my email
 
 
 Recommended Setup for Users
+
+## Creating the Virtual Environment
+
+After extracting the tarball, run these commands:
+
+```bash
+cd cerberus-dist/cerberus
+
+# 1. Create a clean Python virtual environment
+python3 -m venv venv
+
+# 2. Activate it
+source venv/bin/activate
+
+# 3. Install required packages
+pip install -r requirements.txt
+Then continue with:
+Bashsudo ./setup.sh
+./bringupall.sh
+
+Note for users:
+
+The venv/ folder is not included in the tarball (to keep it small).
+You should always create a fresh venv on each new machine.
+Works on Ubuntu/Debian, zLinux, and most other Linux distributions with Python 3.11+.
+
 User Account Strategy
 Cerberus is designed to run as a dedicated system user called cerberus 
 (no login shell, for security).
