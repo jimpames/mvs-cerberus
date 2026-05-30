@@ -17,6 +17,30 @@ OR - request DASD image via my email
 - you can now use my files above to improve moshix zlinux installer for 390x to
 - be modernized for GO, FLASK, PYTHON and more but staying on 18.04 for hyperion stability. 
 
+
+Recommended Setup for Users
+User Account Strategy
+Cerberus is designed to run as a dedicated system user called cerberus 
+(no login shell, for security).
+
+Your normal user account (e.g. zubuntu) is used to run ./setup.sh and ./bringupall.sh.
+What setup.sh should do (which it already does):
+
+Create the cerberus user if it doesn't exist
+Own all files under /opt/cerberus and /etc/cerberus as cerberus:cerberus
+Run the Python processes as cerberus
+
+User Accounts
+Cerberus runs as a dedicated non-login system user named cerberus.
+Your normal user (e.g. zubuntu) runs the setup and bringup scripts.
+The setup.sh script will automatically:
+
+Create the cerberus user if it doesn't exist
+Set correct ownership and permissions
+
+You do not need to manually create the user.
+
+
 Hercules / Hyperion: If you need this build, msg me and I will zip it for you with the config....
 
 Q/A:
