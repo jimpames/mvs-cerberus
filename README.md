@@ -20,7 +20,10 @@ Source code:
 as of today 29 may 2026
 
 the gzip of the installable system for MVS CERBERUS 
-is in the github here
+is in the github here - it is 390x code - you must run under
+zlinux 18.04 390x - see my improvements script in the repo, 
+or get it current with compiler, flask, go , python before you untar
+- don't upg past 18.04 on 390x for zlinux, hyperion doesn't have instr supt.
 
 OR - request DASD image via my email 
 
