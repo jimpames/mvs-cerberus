@@ -25,6 +25,9 @@ zlinux 18.04 390x - see my improvements script in the repo,
 or get it current with compiler, flask, go , python before you untar
 - don't upg past 18.04 on 390x for zlinux, hyperion doesn't have instr supt.
 
+- Q: can we recompile your work for another linux?
+- - sure, have a great time.
+
 OR - request DASD image via my email 
 
 - this is based on moshiz zlinux , modified w python, go and ngrok support
