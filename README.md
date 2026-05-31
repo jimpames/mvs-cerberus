@@ -14,6 +14,8 @@ https://github.com/jimpames/SNA-CLAW-3270
 deep dive of snaw-claw-3270
 https://www.youtube.com/@sna-claw-3270
 
+DEMO CHANNEL:
+https://www.youtube.com/@sna-claw-3270
 
 Source code: 
 
