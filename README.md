@@ -11,6 +11,13 @@ you probably want my SNA-CLAW-3270 too...
 
 https://github.com/jimpames/SNA-CLAW-3270
 
+<img width="1894" height="1020" alt="clones-sna-claw" src="https://github.com/user-attachments/assets/699e4364-5db3-449d-9a98-07d87dc4cce9" />
+
+
+<img width="1904" height="1032" alt="clones-cerberus" src="https://github.com/user-attachments/assets/e3ca0c0c-1410-42af-a40c-9f3b5c93565b" />
+
+
+
 deep dive of snaw-claw-3270
 https://www.youtube.com/@sna-claw-3270
 
