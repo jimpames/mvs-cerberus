@@ -39,7 +39,7 @@ or get it current with compiler, flask, go , python before you untar
 
 OR - request DASD image via my email 
 
-- this is based on moshiz zlinux , modified w python, go and ngrok support
+- this is based on moshix zlinux , modified w python, go and ngrok support
 - you can now use my files above to improve moshix zlinux installer for 390x to
 - be modernized for GO, FLASK, PYTHON and more but staying on 18.04 for hyperion stability. 
 
